@@ -21,5 +21,6 @@ export class JoueursService {
     }else{
       joueur.points = 0;
     }
+    this.joueurs[idJoueur] = joueur;
   }
 }

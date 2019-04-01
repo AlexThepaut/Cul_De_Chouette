@@ -12,7 +12,7 @@ export const ROUTES: Routes = [
         resolve: {
             joueurs: DevResolvers
         },children:[
-            {path: '/:id', component: GameTreeComponent},
+            {path: ':id', component: GameTreeComponent},
         ]
     }
 ];
