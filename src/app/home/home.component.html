@@ -1,0 +1,11 @@
+<div *ngFor="let joueur of joueurService.joueurs">
+  J{{joueur.id}} : {{joueur.nom}}
+</div>
+<div>
+  Nouveau joueur : 
+  <input type="text" name="newJoueur" (keyup)="nameChange($event)">
+  <input type="button" value="ajouter" (click)="addJoueur()">
+</div>
+<div *ngIf="joueurService.joueurs.length >= 2">
+  <input type="button" value="toGame" (click)="toGamePage()">
+</div>
