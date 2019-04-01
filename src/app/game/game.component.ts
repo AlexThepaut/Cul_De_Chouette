@@ -16,6 +16,7 @@ export class GameComponent implements OnInit {
   constructor(private joueurService: JoueursService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.data.subscribe(data => this.joueurService.joueurs = data['joueurs']);
   }
 
   joueurChoose(id: number){
