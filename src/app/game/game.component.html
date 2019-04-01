@@ -2,8 +2,4 @@
   <a (click)="joueurChoose(joueur.id)">J{{joueur.id}}</a> : {{joueur.nom}} {{joueur.points}}
 </div>
 
-<div *ngIf="isJoueurChoose">
-  <input type="button" value="toCombinaison" (click)="toCombinaison()">
-</div>
-
 <router-outlet></router-outlet>
