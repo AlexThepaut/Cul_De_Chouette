@@ -1,10 +1,40 @@
 <mat-accordion>
+  <!-- Branche combinaisons -->
   <mat-expansion-panel>
     <mat-expansion-panel-header>
       <mat-panel-title>
         Combinaisons
       </mat-panel-title>
     </mat-expansion-panel-header>
+    <!-- Sous branche des combinaisons -->
+    <mat-accordion>
+      <!-- Sous sous branche chouette -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Chouette
+          </mat-panel-title>
+          <mat-panel-description>
+            Obtenue lorsque deux dés sont identiques
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <app-chouette></app-chouette>
+      </mat-expansion-panel>
+      <!-- Sous sous branche velute -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Velute
+          </mat-panel-title>
+          <mat-panel-description>
+            Obtenue lorsque la somme de deux dés font le troisième
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <!-- Ajouter composant velute -->
+      </mat-expansion-panel>
+     
+
+    </mat-accordion>
   </mat-expansion-panel>
   <mat-expansion-panel>
     <mat-expansion-panel-header>
@@ -12,6 +42,7 @@
         Défis
       </mat-panel-title>
     </mat-expansion-panel-header>
+    <!-- Ajouter sous arbre des défis -->
   </mat-expansion-panel>
   <mat-expansion-panel>
     <mat-expansion-panel-header>
@@ -19,5 +50,6 @@
         Autres
       </mat-panel-title>
     </mat-expansion-panel-header>
+    <!-- Ajouter sous arbre des autres -->
   </mat-expansion-panel>
 </mat-accordion>
