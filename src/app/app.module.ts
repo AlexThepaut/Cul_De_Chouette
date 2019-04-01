@@ -8,12 +8,14 @@ import { HomeComponent } from './home/home.component';
 import { GameComponent } from './game/game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTreeModule } from '@angular/material/tree';
+import { GameTreeComponent } from './game-tree/game-tree.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    GameComponent
+    GameComponent,
+    GameTreeComponent
   ],
   imports: [
     BrowserModule,
