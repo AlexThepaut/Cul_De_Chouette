@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { JoueursService } from 'src/app/services/joueurs.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-chouette',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChouetteComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private route: ActivatedRoute,private joueurService:JoueursService) { }
+  addPointsChouette(combinaison){
+    this.joueurService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')),combinaison*combinaison)
+  }
   ngOnInit() {
   }
-
 }
