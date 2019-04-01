@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { GameComponent } from './game/game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTreeModule } from '@angular/material/tree';
-import { GameTreeComponent } from './game-tree/game-tree.component';
+import { MatExpansionModule, MatButtonModule } from '@angular/material';
 import { ChouetteComponent } from './defi/chouette/chouette.component';
+import { MatIconModule } from '@angular/material/icon';
+import { GameTreeComponent } from './game-tree/game-tree.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import { ChouetteComponent } from './defi/chouette/chouette.component';
     BrowserModule,
     RouterModule.forRoot(ROUTES),
     BrowserAnimationsModule,
-    MatTreeModule
+    MatExpansionModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

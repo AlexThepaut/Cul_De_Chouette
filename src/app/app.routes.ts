@@ -11,8 +11,8 @@ export const ROUTES: Routes = [
         path: PATH_GAME, component: GameComponent /*, canActivate: [EnoughPlayerGuard], */,
         resolve: {
             joueurs: DevResolvers
-        },children:[
-            {path: ':id', component: GameTreeComponent},
+        }, children: [
+            { path: ':id', component: GameTreeComponent },
         ]
     }
 ];
