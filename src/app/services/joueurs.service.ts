@@ -23,4 +23,8 @@ export class JoueursService {
     }
     this.joueurs[idJoueur-1] = joueur;
   }
+
+  updateGrelottine(idJoueur: number, grelotinne: boolean){
+    this.joueurs[idJoueur-1].grelottine = grelotinne;
+  }
 }

@@ -16,6 +16,7 @@ import { VeluteComponent } from './combinaison/velute/velute.component';
 import { CulDeChouetteComponent } from './combinaison/cul-de-chouette/cul-de-chouette.component';
 import { SuiteComponent } from './combinaison/suite/suite.component';
 import { ChouetteVeluteComponent } from './combinaison/chouette-velute/chouette-velute.component';
+import { NeantComponent } from './combinaison/neant/neant.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ChouetteVeluteComponent } from './combinaison/chouette-velute/chouette-
     CulDeChouetteComponent,
     SuiteComponent,
     VeluteComponent,
-    ChouetteVeluteComponent
+    ChouetteVeluteComponent,
+    NeantComponent
   ],
   imports: [
     BrowserModule,
