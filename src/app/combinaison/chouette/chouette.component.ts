@@ -9,10 +9,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ChouetteComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute,private joueurService:JoueursService) { }
-  addPointsChouette(combinaison){
-    this.joueurService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')),combinaison*combinaison)
+  choix = [1, 2, 3, 4, 5, 6];
+
+  constructor(private route: ActivatedRoute, private joueurService: JoueursService) { }
+
+  addPointsChouette(combinaison) {
+    this.joueurService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')), combinaison * combinaison)
   }
+  
   ngOnInit() {
   }
 }

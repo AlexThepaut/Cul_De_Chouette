@@ -9,9 +9,12 @@ import { GameComponent } from './game/game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule, MatButtonModule, MatListModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule, FormBuilder, ReactiveFormsModule } from "@angular/forms";
 import { GameTreeComponent } from './game-tree/game-tree.component';
 import { ChouetteComponent } from './combinaison/chouette/chouette.component';
 import { VeluteComponent } from './combinaison/velute/velute.component';
+import { CulDeChouetteComponent } from './combinaison/cul-de-chouette/cul-de-chouette.component';
+import { SuiteComponent } from './combinaison/suite/suite.component';
 import { ChouetteVeluteComponent } from './combinaison/chouette-velute/chouette-velute.component';
 import { FormsModule, ReactiveFormsModule, FormBuilder } from '@angular/forms';
 
@@ -22,6 +25,8 @@ import { FormsModule, ReactiveFormsModule, FormBuilder } from '@angular/forms';
     GameComponent,
     GameTreeComponent,
     ChouetteComponent,
+    CulDeChouetteComponent,
+    SuiteComponent
     VeluteComponent,
     ChouetteVeluteComponent
   ],
@@ -32,11 +37,13 @@ import { FormsModule, ReactiveFormsModule, FormBuilder } from '@angular/forms';
     MatExpansionModule,
     MatIconModule,
     MatButtonModule,
-    MatListModule,
     FormsModule,
     ReactiveFormsModule
+    MatListModule,
   ],
-  providers: [FormBuilder],
+  providers: [
+    FormBuilder
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

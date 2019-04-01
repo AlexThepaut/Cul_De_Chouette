@@ -9,10 +9,14 @@ import { JoueursService } from 'src/app/services/joueurs.service';
 })
 export class VeluteComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute,private joueurService:JoueursService) { }
-  addPointsVelute(combinaison){
-    this.joueurService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')),2*(combinaison*combinaison))
+  choix = [1, 2, 3, 4, 5, 6];
+
+  constructor(private route: ActivatedRoute, private joueurService: JoueursService) { }
+
+  addPointsVelute(combinaison) {
+    this.joueurService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')), 2 * (combinaison * combinaison))
   }
+  
   ngOnInit() {
   }
 
