@@ -1,5 +1,7 @@
 <div *ngFor="let joueur of joueurService.joueurs">
-  <a (click)="joueurChoose(joueur.id)">J{{joueur.id}}</a> : {{joueur.nom}} {{joueur.points}}
+  <h1>
+    <a (click)="joueurChoose(joueur.id)">J{{joueur.id}}</a> : {{joueur.nom}} {{joueur.points}}
+  </h1>
 </div>
 
 <router-outlet></router-outlet>

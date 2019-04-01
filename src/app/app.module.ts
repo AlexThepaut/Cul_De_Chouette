@@ -16,7 +16,6 @@ import { VeluteComponent } from './combinaison/velute/velute.component';
 import { CulDeChouetteComponent } from './combinaison/cul-de-chouette/cul-de-chouette.component';
 import { SuiteComponent } from './combinaison/suite/suite.component';
 import { ChouetteVeluteComponent } from './combinaison/chouette-velute/chouette-velute.component';
-import { FormsModule, ReactiveFormsModule, FormBuilder } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,7 @@ import { FormsModule, ReactiveFormsModule, FormBuilder } from '@angular/forms';
     GameTreeComponent,
     ChouetteComponent,
     CulDeChouetteComponent,
-    SuiteComponent
+    SuiteComponent,
     VeluteComponent,
     ChouetteVeluteComponent
   ],
@@ -38,7 +37,7 @@ import { FormsModule, ReactiveFormsModule, FormBuilder } from '@angular/forms';
     MatIconModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
     MatListModule,
   ],
   providers: [
