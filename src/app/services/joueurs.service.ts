@@ -15,12 +15,12 @@ export class JoueursService {
   }
 
   updatePointsJoueur(idJoueur: number, nbrPoints: number): void{
-    let joueur = this.joueurs[idJoueur]
+    let joueur = this.joueurs[idJoueur-1]
     if((joueur.points + nbrPoints) > 0){
       joueur.points += nbrPoints;
     }else{
       joueur.points = 0;
     }
-    this.joueurs[idJoueur] = joueur;
+    this.joueurs[idJoueur-1] = joueur;
   }
 }
