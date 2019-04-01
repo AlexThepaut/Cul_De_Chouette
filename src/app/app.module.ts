@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { GameTreeComponent } from './game-tree/game-tree.component';
 import { ChouetteComponent } from './combinaison/chouette/chouette.component';
 import { VeluteComponent } from './combinaison/velute/velute.component';
+import { CulDeChouetteComponent } from './combinaison/cul-de-chouette/cul-de-chouette.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { VeluteComponent } from './combinaison/velute/velute.component';
     GameComponent,
     GameTreeComponent,
     ChouetteComponent,
-    VeluteComponent
+    VeluteComponent,
+    CulDeChouetteComponent
   ],
   imports: [
     BrowserModule,
