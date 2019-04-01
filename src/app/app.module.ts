@@ -9,10 +9,12 @@ import { GameComponent } from './game/game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule, MatButtonModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule, FormBuilder, ReactiveFormsModule } from "@angular/forms";
 import { GameTreeComponent } from './game-tree/game-tree.component';
 import { ChouetteComponent } from './combinaison/chouette/chouette.component';
 import { VeluteComponent } from './combinaison/velute/velute.component';
 import { CulDeChouetteComponent } from './combinaison/cul-de-chouette/cul-de-chouette.component';
+import { SuiteComponent } from './combinaison/suite/suite.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { CulDeChouetteComponent } from './combinaison/cul-de-chouette/cul-de-cho
     GameTreeComponent,
     ChouetteComponent,
     VeluteComponent,
-    CulDeChouetteComponent
+    CulDeChouetteComponent,
+    SuiteComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +33,13 @@ import { CulDeChouetteComponent } from './combinaison/cul-de-chouette/cul-de-cho
     BrowserAnimationsModule,
     MatExpansionModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    FormBuilder
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
