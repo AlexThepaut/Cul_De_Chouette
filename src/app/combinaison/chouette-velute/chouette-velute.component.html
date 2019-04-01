@@ -1,0 +1,16 @@
+<div class="chouettevelute">
+  <button *ngFor="let number of choix" class="selecteurs" (click)="stockNumber(number)"
+    value="{{number}}">{{number}}</button>
+  <form (ngSubmit)="addPointsChouetteVelute(number)" [formGroup]="joueurForm">
+    <mat-selection-list #joueur formControlName="joueurSelect">
+      <mat-list-option *ngFor="let joueur of this.joueursService.joueurs" value="{{joueur.id}}">
+        {{joueur.nom}}
+      </mat-list-option>
+    </mat-selection-list>
+    <p>
+      Options selected: {{joueur.selectedOptions.selected.length}}
+    </p>
+
+    <button type="submit">OK !</button>
+  </form>
+</div>

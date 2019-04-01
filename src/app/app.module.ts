@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { GameComponent } from './game/game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatExpansionModule, MatButtonModule } from '@angular/material';
+import { MatExpansionModule, MatButtonModule, MatListModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { GameTreeComponent } from './game-tree/game-tree.component';
 import { ChouetteComponent } from './combinaison/chouette/chouette.component';
 import { VeluteComponent } from './combinaison/velute/velute.component';
+import { ChouetteVeluteComponent } from './combinaison/chouette-velute/chouette-velute.component';
+import { FormsModule, ReactiveFormsModule, FormBuilder } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { VeluteComponent } from './combinaison/velute/velute.component';
     GameComponent,
     GameTreeComponent,
     ChouetteComponent,
-    VeluteComponent
+    VeluteComponent,
+    ChouetteVeluteComponent
   ],
   imports: [
     BrowserModule,
@@ -28,9 +31,12 @@ import { VeluteComponent } from './combinaison/velute/velute.component';
     BrowserAnimationsModule,
     MatExpansionModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [FormBuilder],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
