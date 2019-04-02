@@ -68,7 +68,7 @@
         </mat-expansion-panel-header>
         <app-suite></app-suite>
       </mat-expansion-panel>
-      <!-- Sous sous branche suite -->
+      <!-- Sous sous branche néant -->
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>
@@ -88,7 +88,7 @@
         Défis
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <!-- Sous sous branche suite -->
+    <!-- Sous sous branche grelotine -->
     <mat-expansion-panel [disabled]="isGrelottineDisabled()">
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -99,6 +99,18 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <app-grelottine></app-grelottine>
+    </mat-expansion-panel>
+    <!-- Sous sous branche grelotine -->
+    <mat-expansion-panel [disabled]="isCivetDisabled()">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Civet
+        </mat-panel-title>
+        <mat-panel-description>
+          Défi à soi même
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-civet></app-civet>
     </mat-expansion-panel>
   </mat-expansion-panel>
   <mat-expansion-panel>
