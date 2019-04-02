@@ -1,0 +1,22 @@
+<mat-form-field>
+  <mat-label>Défié</mat-label>
+  <mat-select [(ngModel)]="joueurSelect">
+    <mat-option *ngFor="let joueur of this.joueursCanBeSelect" [value]="joueur.id">
+      {{joueur.nom}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Combinaison</mat-label>
+  <mat-select [(ngModel)]="combiSelect">
+    <mat-option *ngFor="let combi of combinaison" [value]="combi">
+      {{combi}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-slider thumbLabel [max]="getMaxPoints()" min="minPoints" step="1" [(ngModel)]="valeurGrelottine"></mat-slider>
+
+<button mat-raised-button (click)="defieurGagnant()">Défieur Gagnant</button>
+<button mat-raised-button (click)="defierGagnant()">Défieur Perdant</button>

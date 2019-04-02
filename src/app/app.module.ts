@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { GameComponent } from './game/game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatExpansionModule, MatButtonModule, MatListModule, MatButtonToggleModule } from '@angular/material';
+import { MatExpansionModule, MatButtonModule, MatListModule, MatSelectModule, MatSliderModule, MatButtonToggleModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, FormBuilder, ReactiveFormsModule } from "@angular/forms";
 import { GameTreeComponent } from './game-tree/game-tree.component';
@@ -17,6 +17,7 @@ import { CulDeChouetteComponent } from './combinaison/cul-de-chouette/cul-de-cho
 import { SuiteComponent } from './combinaison/suite/suite.component';
 import { ChouetteVeluteComponent } from './combinaison/chouette-velute/chouette-velute.component';
 import { NeantComponent } from './combinaison/neant/neant.component';
+import { GrelottineComponent } from './defi/grelottine/grelottine.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { NeantComponent } from './combinaison/neant/neant.component';
     VeluteComponent,
     ChouetteVeluteComponent,
     NeantComponent,
+    GrelottineComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,9 @@ import { NeantComponent } from './combinaison/neant/neant.component';
     FormsModule,
     ReactiveFormsModule,
     MatListModule,
-    MatButtonToggleModule,
+    MatSelectModule,
+    MatSliderModule,
+    MatButtonToggleModule
   ],
   providers: [
     FormBuilder

@@ -88,7 +88,18 @@
         Défis
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <!-- Ajouter sous arbre des défis -->
+    <!-- Sous sous branche suite -->
+    <mat-expansion-panel [disabled]="isGrelottineDisabled()">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Grelottine
+        </mat-panel-title>
+        <mat-panel-description>
+          Défi de Grelottine
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-grelottine></app-grelottine>
+    </mat-expansion-panel>
   </mat-expansion-panel>
   <mat-expansion-panel>
     <mat-expansion-panel-header>
