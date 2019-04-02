@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import _ from 'lodash';
 import { JoueursService } from 'src/app/services/joueurs.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Joueur } from 'src/app/models/joueur';
+import { PATH_GAME } from 'src/app/app.routes.constantes';
 
 @Component({
   selector: 'app-grelottine',
@@ -20,14 +21,24 @@ export class GrelottineComponent implements OnInit {
 
   combinaison = ["Chouette", "Velute", "Cul de Chouette", "Chouette Velute"];
 
-  constructor(private joueurService: JoueursService, private route: ActivatedRoute) { }
+  constructor(private joueurService: JoueursService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.joueursCanBeSelect = _.without(this.joueurService.joueurs, (this.joueurService.joueurs[parseInt(this.route.snapshot.paramMap.get('id')) - 1]));
+    this.joueursCanBeSelect = this.joueurThatCanBeSelected();
+  }
+
+  joueurThatCanBeSelected(){
+    let temp = _.without(this.joueurService.joueurs, (this.joueurService.joueurs[parseInt(this.route.snapshot.paramMap.get('id')) - 1]));
+    for (let i = 0; i < temp.length; i++) {
+      if(!temp[i].grelottine){
+        temp = _.without(temp, (this.joueurService.joueurs[i]));
+      }
+    }
+    return temp;
   }
 
   getMaxPoints() {
-    this.joueursCanBeSelect = _.without(this.joueurService.joueurs, (this.joueurService.joueurs[parseInt(this.route.snapshot.paramMap.get('id')) - 1]));
+    this.joueursCanBeSelect = this.joueurThatCanBeSelected();
     if (this.joueurSelect && this.combiSelect) {
       let defieur = this.joueurService.joueurs[parseInt(this.route.snapshot.paramMap.get('id')) - 1];
       let defier = this.joueurService.joueurs[this.joueurSelect - 1];
@@ -59,6 +70,8 @@ export class GrelottineComponent implements OnInit {
 
     this.joueurService.updatePointsJoueur(this.joueurSelect, -this.valeurGrelottine);
     this.joueurService.updateGrelottine(this.joueurSelect, false);
+
+    this.router.navigate([PATH_GAME]);
   }
 
   defierGagnant(){
@@ -67,5 +80,7 @@ export class GrelottineComponent implements OnInit {
 
     this.joueurService.updatePointsJoueur(this.joueurSelect, this.valeurGrelottine);
     this.joueurService.updateGrelottine(this.joueurSelect, false);
+
+    this.router.navigate([PATH_GAME]);
   }
 }

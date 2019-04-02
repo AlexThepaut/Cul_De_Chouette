@@ -1,6 +1,6 @@
 <div *ngFor="let joueur of joueurService.joueurs">
   <h1>
-    <a (click)="joueurChoose(joueur.id)">J{{joueur.id}}</a> : {{joueur.nom}} {{joueur.points}}
+    <a (click)="joueurChoose(joueur.id)">J{{joueur.id}}</a> : {{joueur.nom}} {{joueur.points}} {{joueur.grelottine}}
   </h1>
 </div>
 

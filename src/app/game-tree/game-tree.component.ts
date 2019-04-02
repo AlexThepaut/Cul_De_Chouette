@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { JoueursService } from '../services/joueurs.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-game-tree',
@@ -7,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameTreeComponent implements OnInit {
 
-  constructor() {
+  constructor(private joueService: JoueursService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
   }
 
+  isGrelottineDisabled(){
+    if(this.joueService.joueurs[parseInt(this.route.snapshot.paramMap.get('id'))-1].grelottine){
+      return false;
+    }else{
+      return true;
+    }
+  }
 }

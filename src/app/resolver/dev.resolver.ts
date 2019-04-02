@@ -11,7 +11,8 @@ export class DevResolvers implements Resolve<any> {
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
         return [
             new Joueur(1, 'Alex'),
-            new Joueur(2, 'Laurent')
+            new Joueur(2, 'Laurent'),
+            new Joueur(3, 'Vincent')
         ];
     }
 }
