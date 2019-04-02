@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { JoueursService } from 'src/app/services/joueurs.service';
-import { ActivatedRoute } from '@angular/router';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { PATH_GAME } from 'src/app/app.routes.constantes';
 
 @Component({
   selector: 'app-chouette-velute',
@@ -13,11 +14,14 @@ export class ChouetteVeluteComponent implements OnInit {
   joueursId: Number[] = [];
   combinaison: Number=0;
   joueurSelectCtrl:FormControl
+  combiSelectCtrl:FormControl
   joueurForm:FormGroup
-  constructor(private joueursService: JoueursService, private route: ActivatedRoute,private fb:FormBuilder) {
-    this.joueurSelectCtrl = fb.control("")
+  constructor(private router: Router,private joueursService: JoueursService, private route: ActivatedRoute,private fb:FormBuilder) {
+    this.joueurSelectCtrl = fb.control("",[Validators.required])
+    this.combiSelectCtrl = fb.control("",[Validators.required])
     this.joueurForm = fb.group({
-      joueurSelect:this.joueurSelectCtrl
+      joueurSelect:this.joueurSelectCtrl,
+      combiSelect:this.combiSelectCtrl
     })
 
   }
@@ -34,8 +38,8 @@ export class ChouetteVeluteComponent implements OnInit {
       for (let i = 0; i < longeur; i++) {
         this.joueursService.updatePointsJoueur(Number(this.joueurForm.value.joueurSelect[i]),-(2 * multiplication) )   
       }
-
     }
+    this.router.navigate([PATH_GAME]);
   }
   stockNumber(number) {
     this.combinaison = number;

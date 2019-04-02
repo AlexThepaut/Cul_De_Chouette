@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { JoueursService } from 'src/app/services/joueurs.service';
+import { PATH_GAME } from 'src/app/app.routes.constantes';
 
 @Component({
   selector: 'app-cul-de-chouette',
@@ -9,13 +10,22 @@ import { JoueursService } from 'src/app/services/joueurs.service';
 })
 export class CulDeChouetteComponent implements OnInit {
 
-  choix = [1, 2, 3, 4, 5, 6];
+  choix: Number[] = [1, 2, 3, 4, 5, 6];
+  joueursId: Number[] = [];
+  combinaison: Number = 0;
 
-  constructor(private route: ActivatedRoute,private joueurService:JoueursService) { }
-  addPointsChouette(combinaison){
-    this.joueurService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')),combinaison*10+40)
+  constructor(private router: Router, private joueursService: JoueursService, private route: ActivatedRoute) {
   }
-
+  addPointsCulDeChouette(){
+    if (this.combinaison!=0){
+      let score = parseInt(this.combinaison.toString()) * 10+40 ;
+      this.joueursService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')), score)
+      this.router.navigate([PATH_GAME]);
+    }
+  }
+  stockNumber(number) {
+    this.combinaison = number;
+  }
   ngOnInit() {
   }
 

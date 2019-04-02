@@ -1,8 +1,10 @@
 <div class="chouettevelute">
-  <button *ngFor="let number of choix" class="selecteurs" (click)="stockNumber(number)"
-    value="{{number}}">{{number}}</button>
   <form (ngSubmit)="addPointsChouetteVelute(number)" [formGroup]="joueurForm">
-    <mat-selection-list #joueur formControlName="joueurSelect">
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [formControl]="combiSelectCtrl">
+        <mat-button-toggle *ngFor="let number of choix" (click)="stockNumber(number)" 
+        value="{{number}}">{{number}}</mat-button-toggle>
+      </mat-button-toggle-group>
+    <mat-selection-list #joueur [formControl]="joueurSelectCtrl">
       <mat-list-option *ngFor="let joueur of this.joueursService.joueurs" value="{{joueur.id}}">
         {{joueur.nom}}
       </mat-list-option>
@@ -11,6 +13,6 @@
       Options selected: {{joueur.selectedOptions.selected.length}}
     </p>
 
-    <button type="submit">OK !</button>
+    <button type="submit" [disabled]="joueurForm.invalid">OK !</button>
   </form>
 </div>

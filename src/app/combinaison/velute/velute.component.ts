@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { JoueursService } from 'src/app/services/joueurs.service';
+import { PATH_GAME } from 'src/app/app.routes.constantes';
 
 @Component({
   selector: 'app-velute',
@@ -8,15 +9,21 @@ import { JoueursService } from 'src/app/services/joueurs.service';
   styleUrls: ['./velute.component.css']
 })
 export class VeluteComponent implements OnInit {
+  choix: Number[] = [1, 2, 3, 4, 5, 6];
+  joueursId: Number[] = [];
+  combinaison: Number=0;
 
-  choix = [1, 2, 3, 4, 5, 6];
-
-  constructor(private route: ActivatedRoute, private joueurService: JoueursService) { }
-
-  addPointsVelute(combinaison) {
-    this.joueurService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')), 2 * (combinaison * combinaison))
+  constructor(private router: Router,private joueursService: JoueursService, private route: ActivatedRoute) {
+   
   }
-  
+  addPointsVelute() {
+    let multiplication = parseInt(this.combinaison.toString()) * parseInt(this.combinaison.toString())
+    this.joueursService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')), 2 * multiplication)
+    this.router.navigate([PATH_GAME]);
+  }
+  stockNumber(number) {
+    this.combinaison = number;
+  }
   ngOnInit() {
   }
 

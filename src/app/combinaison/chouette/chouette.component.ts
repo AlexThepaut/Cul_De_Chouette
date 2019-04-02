@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JoueursService } from 'src/app/services/joueurs.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PATH_GAME } from 'src/app/app.routes.constantes';
 
 @Component({
   selector: 'app-chouette',
@@ -8,15 +9,21 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./chouette.component.css']
 })
 export class ChouetteComponent implements OnInit {
+  choix: Number[] = [1, 2, 3, 4, 5, 6];
+  joueursId: Number[] = [];
+  combinaison: Number = 0;
 
-  choix = [1, 2, 3, 4, 5, 6];
-
-  constructor(private route: ActivatedRoute, private joueurService: JoueursService) { }
-
-  addPointsChouette(combinaison) {
-    this.joueurService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')), combinaison * combinaison)
+  constructor(private router: Router, private joueursService: JoueursService, private route: ActivatedRoute) {
   }
-  
+  addPointsChouette() {
+    let multiplication = parseInt(this.combinaison.toString()) * parseInt(this.combinaison.toString())
+    this.joueursService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')), multiplication)
+    this.router.navigate([PATH_GAME]);
+  }
+  stockNumber(number) {
+    this.combinaison = number;
+  }
+
   ngOnInit() {
   }
 }
