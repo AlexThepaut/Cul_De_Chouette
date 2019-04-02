@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { GameComponent } from './game/game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatExpansionModule, MatButtonModule, MatListModule } from '@angular/material';
+import { MatExpansionModule, MatButtonModule, MatListModule, MatButtonToggleModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, FormBuilder, ReactiveFormsModule } from "@angular/forms";
 import { GameTreeComponent } from './game-tree/game-tree.component';
@@ -29,7 +29,7 @@ import { NeantComponent } from './combinaison/neant/neant.component';
     SuiteComponent,
     VeluteComponent,
     ChouetteVeluteComponent,
-    NeantComponent
+    NeantComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +41,7 @@ import { NeantComponent } from './combinaison/neant/neant.component';
     FormsModule,
     ReactiveFormsModule,
     MatListModule,
+    MatButtonToggleModule,
   ],
   providers: [
     FormBuilder

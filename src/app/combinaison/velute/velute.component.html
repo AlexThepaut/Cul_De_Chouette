@@ -1,3 +1,9 @@
-<div class="velute">
-  <button *ngFor="let number of choix" class="selecteurs" (click)="addPointsChouette(number)" value="{{number}}">{{number}}</button>
-</div>
+<form (ngSubmit)="addPointsVelute()" #joueurForm="ngForm">
+  <div class="velute">
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" ngModel required>
+      <mat-button-toggle *ngFor="let number of choix" (click)="stockNumber(number)" value="{{number}}">{{number}}
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <button type="submit" [disabled]="joueurForm.invalid">OK !</button>
+</form>
