@@ -88,6 +88,18 @@
         Défis
       </mat-panel-title>
     </mat-expansion-panel-header>
+    <!-- Sous sous branche soufflette -->
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Soufflette
+          </mat-panel-title>
+          <mat-panel-description>
+            Défi lorsqu'un joueur à fait un 421
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <app-soufflette></app-soufflette>
+      </mat-expansion-panel>
     <!-- Sous sous branche grelotine -->
     <mat-expansion-panel [disabled]="isGrelottineDisabled()">
       <mat-expansion-panel-header>
@@ -100,7 +112,7 @@
       </mat-expansion-panel-header>
       <app-grelottine></app-grelottine>
     </mat-expansion-panel>
-    <!-- Sous sous branche grelotine -->
+    <!-- Sous sous branche civet -->
     <mat-expansion-panel [disabled]="isCivetDisabled()">
       <mat-expansion-panel-header>
         <mat-panel-title>
