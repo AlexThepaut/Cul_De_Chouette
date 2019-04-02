@@ -1,7 +1,10 @@
-<form (ngSubmit)="validationJoueur()" [formGroup]="joueursForm" >
-  <select name="suite" [formControl]="joueursSelectCtrl">
-      <option  value="">--Choisir un joueur--</option>
-    <option *ngFor="let joueur of this.joueursService.joueurs" value="{{joueur.id}}">{{joueur.nom}}</option>
-  </select>
-  <button type="submit" [disabled]="joueursForm.invalid" >OK !</button>
+<form (ngSubmit)="validationJoueur()" [formGroup]="joueursForm">
+  <mat-form-field>
+    <mat-label>Joueur nul</mat-label>
+    <mat-select name="suite" [formControl]="joueursSelectCtrl">
+      <mat-option value="">--Choisir un joueur--</mat-option>
+      <mat-option *ngFor="let joueur of this.joueursService.joueurs" value="{{joueur.id}}">{{joueur.nom}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button type="submit" [disabled]="joueursForm.invalid">OK !</button>
 </form>
