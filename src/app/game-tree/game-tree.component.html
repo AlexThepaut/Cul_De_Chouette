@@ -18,7 +18,11 @@
             Obtenue lorsque deux dés sont identiques
           </mat-panel-description>
         </mat-expansion-panel-header>
-        <app-chouette></app-chouette>
+        <mat-tab-group>
+            <mat-tab label="Sans sirotage"><app-chouette></app-chouette> </mat-tab>
+            <mat-tab label="Avec sirotage"><app-chouette-sirotee></app-chouette-sirotee> </mat-tab>
+          </mat-tab-group>
+        
       </mat-expansion-panel>
       <!-- Sous sous branche velute -->
       <mat-expansion-panel>

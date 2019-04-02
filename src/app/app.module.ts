@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { GameComponent } from './game/game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatExpansionModule, MatButtonModule, MatListModule, MatSelectModule, MatSliderModule, MatButtonToggleModule } from '@angular/material';
+import { MatExpansionModule, MatButtonModule, MatListModule, MatSelectModule, MatSliderModule, MatButtonToggleModule, MatTabsModule, MatRadioModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, FormBuilder, ReactiveFormsModule } from "@angular/forms";
 import { GameTreeComponent } from './game-tree/game-tree.component';
@@ -18,6 +18,7 @@ import { SuiteComponent } from './combinaison/suite/suite.component';
 import { ChouetteVeluteComponent } from './combinaison/chouette-velute/chouette-velute.component';
 import { NeantComponent } from './combinaison/neant/neant.component';
 import { GrelottineComponent } from './defi/grelottine/grelottine.component';
+import { ChouetteSiroteeComponent } from './combinaison/chouette-sirotee/chouette-sirotee.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { GrelottineComponent } from './defi/grelottine/grelottine.component';
     VeluteComponent,
     ChouetteVeluteComponent,
     NeantComponent,
-    GrelottineComponent
+    GrelottineComponent,
+    ChouetteSiroteeComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,9 @@ import { GrelottineComponent } from './defi/grelottine/grelottine.component';
     MatListModule,
     MatSelectModule,
     MatSliderModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatTabsModule,
+    MatRadioModule,
   ],
   providers: [
     FormBuilder
