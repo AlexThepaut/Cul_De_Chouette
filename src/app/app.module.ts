@@ -18,6 +18,7 @@ import { SuiteComponent } from './combinaison/suite/suite.component';
 import { ChouetteVeluteComponent } from './combinaison/chouette-velute/chouette-velute.component';
 import { NeantComponent } from './combinaison/neant/neant.component';
 import { GrelottineComponent } from './defi/grelottine/grelottine.component';
+import { CivetComponent } from './defi/civet/civet.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { GrelottineComponent } from './defi/grelottine/grelottine.component';
     VeluteComponent,
     ChouetteVeluteComponent,
     NeantComponent,
-    GrelottineComponent
+    GrelottineComponent,
+    CivetComponent
   ],
   imports: [
     BrowserModule,
