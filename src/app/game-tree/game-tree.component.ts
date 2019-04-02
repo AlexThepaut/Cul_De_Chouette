@@ -30,4 +30,12 @@ export class GameTreeComponent implements OnInit {
     //   return true;
     // }
   }
+
+  isBouclietteDisabled(){
+    if(this.joueService.joueurs[parseInt(this.route.snapshot.paramMap.get('id'))-1].boucliette){
+      return false;
+    }else{
+      return true;
+    }
+  }
 }
