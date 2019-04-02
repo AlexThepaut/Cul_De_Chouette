@@ -59,7 +59,7 @@ export class GrelottineComponent implements OnInit {
           maxPoints = pointJoueurFaible * 0.08;
           break;
       }
-      return maxPoints;
+      return parseInt(maxPoints);
     }
     return 0;
   }

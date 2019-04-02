@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JoueursService } from 'src/app/services/joueurs.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PATH_GAME } from 'src/app/app.routes.constantes';
 
 @Component({
   selector: 'app-neant',
@@ -9,10 +10,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NeantComponent implements OnInit {
 
-  constructor(private joueurService: JoueursService, private route: ActivatedRoute) { }
+  constructor(private joueurService: JoueursService, private route: ActivatedRoute, private router: Router ) { }
 
   addGrelottine(combinaison) {
     this.joueurService.updateGrelottine(parseInt(this.route.snapshot.paramMap.get('id')), true);
+    this.router.navigate([PATH_GAME]);
   }
   ngOnInit() {
   }
