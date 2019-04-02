@@ -1,11 +1,16 @@
-<div *ngFor="let joueur of joueurService.joueurs">
-  J{{joueur.id}} : {{joueur.nom}}
-</div>
-<div>
-  Nouveau joueur : 
-  <input type="text" name="newJoueur" (keyup)="nameChange($event)">
-  <input type="button" value="ajouter" (click)="addJoueur()">
-</div>
-<div *ngIf="joueurService.joueurs.length >= 2">
-  <input type="button" value="toGame" (click)="toGamePage()">
+<div class="container-home">
+  <mat-card>
+    <div *ngFor="let joueur of joueurService.joueurs">
+      Joueur {{joueur.id}} : {{joueur.nom}}
+    </div>
+    <div>
+      <mat-form-field class="">
+        <input matInput placeholder="Nouveau joueur" name="newJoueur" (keyup)="nameChange($event)" [(ngModel)]="name">
+      </mat-form-field>
+      <button mat-raised-button type="button" (click)="addJoueur()">Ajouter</button>
+    </div>
+    <div *ngIf="joueurService.joueurs.length >= 2">
+      <button mat-raised-button type="button" (click)="toGamePage()">Jouer !</button>
+    </div>
+  </mat-card>
 </div>
