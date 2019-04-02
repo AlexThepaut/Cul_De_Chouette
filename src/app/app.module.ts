@@ -20,6 +20,9 @@ import { NeantComponent } from './combinaison/neant/neant.component';
 import { GrelottineComponent } from './defi/grelottine/grelottine.component';
 import { CivetComponent } from './defi/civet/civet.component';
 import { SouffletteComponent } from './defi/soufflette/soufflette.component';
+import { BevueComponent } from './autres/bevue/bevue.component';
+import { BouclietteComponent } from './autres/boucliette/boucliette.component';
+import { AchatDeDesComponent } from './autres/achat-de-des/achat-de-des.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { SouffletteComponent } from './defi/soufflette/soufflette.component';
     NeantComponent,
     GrelottineComponent,
     CivetComponent,
-    SouffletteComponent
+    SouffletteComponent,
+    BevueComponent,
+    BouclietteComponent,
+    AchatDeDesComponent
   ],
   imports: [
     BrowserModule,

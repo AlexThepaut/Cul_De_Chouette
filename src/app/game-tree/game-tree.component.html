@@ -90,16 +90,16 @@
     </mat-expansion-panel-header>
     <!-- Sous sous branche soufflette -->
     <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Soufflette
-          </mat-panel-title>
-          <mat-panel-description>
-            Défi lorsqu'un joueur à fait un 421
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <app-soufflette></app-soufflette>
-      </mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Soufflette
+        </mat-panel-title>
+        <mat-panel-description>
+          Défi lorsqu'un joueur à fait un 421
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-soufflette></app-soufflette>
+    </mat-expansion-panel>
     <!-- Sous sous branche grelotine -->
     <mat-expansion-panel [disabled]="isGrelottineDisabled()">
       <mat-expansion-panel-header>
@@ -131,6 +131,41 @@
         Autres
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <!-- Ajouter sous arbre des autres -->
+    <!-- Sous sous branche bévue -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Bévue
+        </mat-panel-title>
+        <mat-panel-description>
+          C'est raté !
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-bevue></app-bevue>
+    </mat-expansion-panel>
+    <!-- Sous sous branche boucliette -->
+    <mat-expansion-panel [disabled]="isBouclietteDisabled()">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Boucliette
+        </mat-panel-title>
+        <mat-panel-description>
+          Parade
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-boucliette></app-boucliette>
+    </mat-expansion-panel>
+    <!-- Sous sous branche achat de dés -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Achat de dés
+        </mat-panel-title>
+        <mat-panel-description>
+          
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-achat-de-des></app-achat-de-des>
+    </mat-expansion-panel>
   </mat-expansion-panel>
 </mat-accordion>

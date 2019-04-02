@@ -4,18 +4,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PATH_GAME } from 'src/app/app.routes.constantes';
 
 @Component({
-  selector: 'app-neant',
-  templateUrl: './neant.component.html',
-  styleUrls: ['./neant.component.css']
+  selector: 'app-boucliette',
+  templateUrl: './boucliette.component.html',
+  styleUrls: ['./boucliette.component.css']
 })
-export class NeantComponent implements OnInit {
+export class BouclietteComponent implements OnInit {
 
   constructor(private joueurService: JoueursService, private route: ActivatedRoute, private router: Router ) { }
 
-  addGrelottine() {
-    this.joueurService.updateGrelottine(parseInt(this.route.snapshot.paramMap.get('id')), true);
+  bevue() {
+    this.joueurService.setBoucliette(parseInt(this.route.snapshot.paramMap.get('id')));
     this.router.navigate([PATH_GAME]);
   }
+
   ngOnInit() {
   }
 

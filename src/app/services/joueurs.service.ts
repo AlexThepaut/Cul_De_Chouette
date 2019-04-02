@@ -37,4 +37,8 @@ export class JoueursService {
       }
     }
   }
+
+  setBoucliette(idJoueur: number){
+    this.joueurs[idJoueur-1].boucliette = false;
+  }
 }
