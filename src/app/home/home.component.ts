@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   isDone: boolean;
   name = "";
 
-  constructor(private joueurService: JoueursService, private router: Router) { }
+  constructor(public joueurService: JoueursService, private router: Router) { }
 
   ngOnInit() {
   }

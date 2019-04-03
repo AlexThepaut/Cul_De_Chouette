@@ -1,5 +1,5 @@
 <div class="chouettevelute">
-  <form (ngSubmit)="addPointsChouetteVelute(number)" [formGroup]="joueurForm">
+  <form (ngSubmit)="addPointsChouetteVelute()" [formGroup]="joueurForm">
     <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [formControl]="combiSelectCtrl">
         <mat-button-toggle *ngFor="let number of choix" (click)="stockNumber(number)" 
         value="{{number}}">{{number}}</mat-button-toggle>

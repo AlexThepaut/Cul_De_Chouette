@@ -14,7 +14,7 @@ export class SuiteComponent implements OnInit {
   joueursSelectCtrl: FormControl;
   joueursForm: FormGroup;
 
-  constructor(private router: Router,private joueursService: JoueursService, private fb: FormBuilder) {
+  constructor(private router: Router,public joueursService: JoueursService, private fb: FormBuilder) {
     this.joueursSelectCtrl = fb.control('', [Validators.required]);
 
     this.joueursForm = fb.group({

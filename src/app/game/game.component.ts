@@ -13,7 +13,7 @@ export class GameComponent implements OnInit {
 
   isJoueurChoose: boolean = false;
 
-  constructor(private joueurService: JoueursService, private router: Router, private route: ActivatedRoute) { }
+  constructor(public joueurService: JoueursService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => this.joueurService.joueurs = data['joueurs']);
