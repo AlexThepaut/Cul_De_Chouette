@@ -1,7 +1,36 @@
-<div *ngFor="let joueur of joueurService.joueurs">
-  <h1>
-    <a (click)="joueurChoose(joueur.id)">J{{joueur.id}}</a> : {{joueur.nom}} {{joueur.points}} {{joueur.grelottine}} {{joueur.boucliette}} {{joueur.civet}}
-  </h1>
+<div class="container-game">
+  <app-navbar></app-navbar>
+  <table class="font-kaamelott texte-center table__joueur">
+    <tr>
+      <th></th>
+      <td></td>
+      <td>Grelottine</td>
+      <td>Boucliette</td>
+      <td>Civet</td>
+    </tr>
+    <tr *ngFor="let joueur of joueurService.joueurs">
+      <th class="joueur__nom">
+        <a (click)="joueurChoose(joueur.id)">{{joueur.nom}}</a>
+      </th>
+      <td>
+        {{joueur.points}}
+      </td>
+      <td>
+        <span *ngIf="joueur.grelottine">
+          X
+        </span>
+      </td>
+      <td>
+        <span *ngIf="joueur.boucliette">
+          X
+        </span>
+      </td>
+      <td>
+        {{joueur.civet}}
+      </td>
+    </tr>
+  </table>
+  <div class="combinaison">
+    <router-outlet></router-outlet>
+  </div>
 </div>
-
-<router-outlet></router-outlet>

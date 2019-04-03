@@ -1,4 +1,7 @@
-<mat-slider thumbLabel max="102" min="minPoints" step="1" [(ngModel)]="valeurCivet"></mat-slider>
-
-<button mat-raised-button (click)="gagne()">Gagné</button>
-<button mat-raised-button (click)="perdu()">Perdu</button>
+<div class="game-tree__space_two-object">
+    <mat-slider thumbLabel max="102" min="minPoints" step="1" [(ngModel)]="valeurCivet"></mat-slider>
+    <div>
+        <button mat-raised-button (click)="gagne()">Gagné</button>
+        <button mat-raised-button (click)="perdu()">Perdu</button>
+    </div>
+</div>

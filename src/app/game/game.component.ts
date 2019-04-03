@@ -19,12 +19,12 @@ export class GameComponent implements OnInit {
     this.route.data.subscribe(data => this.joueurService.joueurs = data['joueurs']);
   }
 
-  joueurChoose(id: number){
+  joueurChoose(id: number) {
     this.router.navigate([PATH_GAME, id]);
     this.isJoueurChoose = true;
   }
 
-  toCombinaison(){
+  toCombinaison() {
     this.route.paramMap.subscribe((param: ParamMap) => {
       const player: string = param.get('player');
       this.router.navigate([PATH_GAME]);

@@ -13,10 +13,10 @@
     </mat-button-toggle-group>
     <div class="parieurs" *ngFor="let joueur of this.listeJoueurs">
       {{joueur.nom}} : 
-      <mat-radio-group aria-label="Select an option">
-        <mat-radio-button value="1" (click)="gagne(true,joueur.id)">Gagné     </mat-radio-button>
-        <mat-radio-button value="2" (click)="gagne(false,joueur.id)">Perdu     </mat-radio-button>
-        <mat-radio-button value="3" >pas Joué     </mat-radio-button>
+      <mat-radio-group aria-label="Select an option" class="game-tree__space_two-object">
+        <mat-radio-button value="1" (click)="gagne(true,joueur.id)">Gagné</mat-radio-button>
+        <mat-radio-button value="2" (click)="gagne(false,joueur.id)">Perdu</mat-radio-button>
+        <mat-radio-button value="3" >pas Joué</mat-radio-button>
       </mat-radio-group>
     </div>
   </div>
