@@ -37,7 +37,7 @@ import { ChouetteSiroteeComponent } from './combinaison/chouette-sirotee/chouett
     VeluteComponent,
     ChouetteVeluteComponent,
     NeantComponent,
-    ChouetteSiroteeComponent
+    ChouetteSiroteeComponent,
     GrelottineComponent,
     CivetComponent,
     SouffletteComponent,
