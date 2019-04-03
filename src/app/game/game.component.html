@@ -10,7 +10,7 @@
     </tr>
     <tr *ngFor="let joueur of joueurService.joueurs">
       <th class="joueur__nom">
-        <a (click)="joueurChoose(joueur.id)">{{joueur.nom}}</a>
+        <button mat-button (click)="joueurChoose(joueur.id)" class="font-kaamelott button-nom">{{joueur.nom}}</button>
       </th>
       <td>
         {{joueur.points}}
