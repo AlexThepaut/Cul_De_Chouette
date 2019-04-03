@@ -24,6 +24,7 @@ import { BevueComponent } from './autres/bevue/bevue.component';
 import { BouclietteComponent } from './autres/boucliette/boucliette.component';
 import { AchatDeDesComponent } from './autres/achat-de-des/achat-de-des.component';
 import { ChouetteSiroteeComponent } from './combinaison/chouette-sirotee/chouette-sirotee.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { ChouetteSiroteeComponent } from './combinaison/chouette-sirotee/chouett
     MatRadioModule,
   ],
   providers: [
-    FormBuilder
+    FormBuilder,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })
