@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { GameComponent } from './game/game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatExpansionModule, MatButtonModule, MatListModule, MatSelectModule, MatSliderModule, MatButtonToggleModule, MatTabsModule, MatRadioModule, MatCardModule, MatInputModule } from '@angular/material';
+import { MatExpansionModule, MatButtonModule, MatListModule, MatSelectModule, MatSliderModule, MatButtonToggleModule, MatTabsModule, MatRadioModule, MatCardModule, MatInputModule, MatToolbarModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, FormBuilder, ReactiveFormsModule } from "@angular/forms";
 import { GameTreeComponent } from './game-tree/game-tree.component';
@@ -25,6 +25,7 @@ import { BouclietteComponent } from './autres/boucliette/boucliette.component';
 import { AchatDeDesComponent } from './autres/achat-de-des/achat-de-des.component';
 import { ChouetteSiroteeComponent } from './combinaison/chouette-sirotee/chouette-sirotee.component';
 import { CookieService } from 'ngx-cookie-service';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { CookieService } from 'ngx-cookie-service';
     SouffletteComponent,
     BevueComponent,
     BouclietteComponent,
-    AchatDeDesComponent
+    AchatDeDesComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +65,7 @@ import { CookieService } from 'ngx-cookie-service';
     MatInputModule,
     MatTabsModule,
     MatRadioModule,
+    MatToolbarModule
   ],
   providers: [
     FormBuilder,

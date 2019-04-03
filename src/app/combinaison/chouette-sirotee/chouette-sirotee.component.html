@@ -1,22 +1,25 @@
 <form (ngSubmit)="addPointsChouetteSirote()" [formGroup]="joueurForm">
   <div class="chouette-sirote">
-    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-      <mat-button-toggle *ngFor="let number of choix" (click)="stockNumber(number)" value="{{number}}">{{number}}
-      </mat-button-toggle>
-    </mat-button-toggle-group>
-
-    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-      <mat-button-toggle (click)="gagne(true)">Gagné
-      </mat-button-toggle>
-      <mat-button-toggle (click)="gagne(false)">Perdu
-      </mat-button-toggle>
-    </mat-button-toggle-group>
-    <div class="parieurs" *ngFor="let joueur of this.listeJoueurs">
+    <div class="sirotage__groupe">
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle *ngFor="let number of choix" (click)="stockNumber(number)" value="{{number}}">{{number}}
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+    <div class="sirotage__groupe">
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle (click)="gagne(true)">Gagné
+        </mat-button-toggle>
+        <mat-button-toggle (click)="gagne(false)">Perdu
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+    <div class="parieurs sirotage__groupe sirotage__groupe-selecteur" *ngFor="let joueur of this.listeJoueurs">
       {{joueur.nom}} : 
-      <mat-radio-group aria-label="Select an option">
-        <mat-radio-button value="1" (click)="gagne(true,joueur.id)">Gagné     </mat-radio-button>
-        <mat-radio-button value="2" (click)="gagne(false,joueur.id)">Perdu     </mat-radio-button>
-        <mat-radio-button value="3" >pas Joué     </mat-radio-button>
+      <mat-radio-group aria-label="Select an option" class="game-tree__space_two-object">
+        <mat-radio-button value="1" (click)="gagne(true,joueur.id)">Gagné</mat-radio-button>
+        <mat-radio-button value="2" (click)="gagne(false,joueur.id)">Perdu</mat-radio-button>
+        <mat-radio-button value="3" >pas Joué</mat-radio-button>
       </mat-radio-group>
     </div>
   </div>

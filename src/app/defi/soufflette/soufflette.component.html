@@ -7,19 +7,21 @@
   </mat-select>
 </mat-form-field>
 
-<mat-button-toggle-group [(ngModel)]="optionSelect">
-  <mat-button-toggle value="1">
-    1
-  </mat-button-toggle>
-  <mat-button-toggle value="2">
-    2
-  </mat-button-toggle>
-  <mat-button-toggle value="3">
-    3
-  </mat-button-toggle>
-  <mat-button-toggle value="0">
-    Perdu !
-  </mat-button-toggle>
-</mat-button-toggle-group>
-
-<button mat-raised-button (click)="ajoutDesPoints()">GO !</button>
+<div class="game-tree__space_two-object">
+  <mat-button-toggle-group [(ngModel)]="optionSelect">
+    <mat-button-toggle value="1">
+      1
+    </mat-button-toggle>
+    <mat-button-toggle value="2">
+      2
+    </mat-button-toggle>
+    <mat-button-toggle value="3">
+      3
+    </mat-button-toggle>
+    <mat-button-toggle value="0">
+      Perdu !
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+  
+  <button mat-raised-button (click)="ajoutDesPoints()">GO !</button>
+</div>

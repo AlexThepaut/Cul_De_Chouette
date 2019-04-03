@@ -18,5 +18,7 @@
 
 <mat-slider thumbLabel [max]="getMaxPoints()" min="minPoints" step="1" [(ngModel)]="valeurGrelottine"></mat-slider>
 
-<button mat-raised-button (click)="defieurGagnant()">Défieur Gagnant</button>
-<button mat-raised-button (click)="defierGagnant()">Défieur Perdant</button>
+<div class="game-tree__space_two-object">
+  <button mat-raised-button (click)="defieurGagnant()">Défieur Gagnant</button>
+  <button mat-raised-button (click)="defierGagnant()">Défié Perdant</button>
+</div>
