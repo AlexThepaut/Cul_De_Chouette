@@ -46,7 +46,7 @@ import { VictoireComponent } from './victoire/victoire.component';
     SouffletteComponent,
     BevueComponent,
     BouclietteComponent,
-    VictoireComponent
+    VictoireComponent,
     AchatDeDesComponent,
     NavbarComponent
   ],

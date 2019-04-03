@@ -14,7 +14,7 @@ export class VictoireComponent implements OnInit {
 
   ngOnInit() {
     let joueur = this.joueurService.joueurs[parseInt(this.route.snapshot.paramMap.get('id')) - 1];
-    this.texte = `Le joueur ${joueur.nom} à gagné`;
+    this.texte = `${joueur.nom} à gagné`;
   }
   retour(){
     this.joueurService.delete();
