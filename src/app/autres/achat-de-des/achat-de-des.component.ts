@@ -12,7 +12,7 @@ export class AchatDeDesComponent implements OnInit {
 
   constructor(private joueurService: JoueursService, private route: ActivatedRoute, private router: Router ) { }
 
-  achat() {
+  achater() {
     this.joueurService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')), -30);
     this.router.navigate([PATH_GAME]);
   }

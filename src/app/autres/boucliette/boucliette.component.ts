@@ -12,7 +12,7 @@ export class BouclietteComponent implements OnInit {
 
   constructor(private joueurService: JoueursService, private route: ActivatedRoute, private router: Router ) { }
 
-  bevue() {
+  bouclier() {
     this.joueurService.setBoucliette(parseInt(this.route.snapshot.paramMap.get('id')));
     this.router.navigate([PATH_GAME]);
   }

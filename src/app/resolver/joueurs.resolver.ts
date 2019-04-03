@@ -1,18 +1,14 @@
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { Joueur } from '../models/joueur';
+import { CookieService } from 'ngx-cookie-service';
 @Injectable({
     providedIn: 'root'
 })
-export class DevResolvers implements Resolve<any> {
-    constructor() {
+export class ResolversJoueurs implements Resolve<any> {
+    constructor(private cookieService: CookieService) {
     }
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
-        return [
-            new Joueur(1, 'Alex'),
-            new Joueur(2, 'Laurent'),
-            new Joueur(3, 'Vincent')
-        ];
+        return JSON.parse(this.cookieService.get('CDC'));
     }
 }
