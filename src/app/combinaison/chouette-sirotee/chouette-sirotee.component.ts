@@ -16,7 +16,6 @@ export class ChouetteSiroteeComponent implements OnInit {
   joueursId: Number[] = [];
   combinaison: Number = 0;
   combiSelectCtrl: FormControl
-  participantsSelectCtrl: FormControl
   victoireSelectCtrl: FormControl
   joueurForm: FormGroup
   listeJoueurs;
@@ -24,11 +23,9 @@ export class ChouetteSiroteeComponent implements OnInit {
   perdants: any[]=[];
   constructor(private router: Router, private joueursService: JoueursService, private route: ActivatedRoute, private fb: FormBuilder) {
     this.combiSelectCtrl = fb.control("", [Validators.required])
-    this.participantsSelectCtrl = fb.control("", [Validators.required])
-    this.victoireSelectCtrl = fb.control("", [Validators.required])
+    this.victoireSelectCtrl = fb.control([Validators.required])
     this.joueurForm = fb.group({
-      combiSelect: this.combiSelectCtrl,
-      participantsSelect:this.participantsSelectCtrl,
+      combiSelect:this.combiSelectCtrl,
       victoireSelect:this.victoireSelectCtrl
     })
   }
@@ -46,17 +43,21 @@ export class ChouetteSiroteeComponent implements OnInit {
     for(let i =0; i < this.perdants.length; i++) {
       if(this.perdants[i]==parseInt(this.route.snapshot.paramMap.get('id'))){
         this.joueursService.updatePointsJoueur(this.perdants[i],scoreChouette)
+        if(parseInt(this.combinaison.toString())==6){
+          this.joueursService.updateCivet(this.perdants[i],true);
+        }
       }else{
         this.joueursService.updatePointsJoueur(this.perdants[i],-25)
       }
     }
-    this.router.navigate([PATH_GAME]);
+    if(this.perdants.length>0||this.gagnants.length>0){
+      this.router.navigate([PATH_GAME]);
+    }
   }
   stockNumber(number) {
     this.combinaison = number;
   }
   gagne(victoire: boolean, id = Number(this.route.snapshot.paramMap.get('id'))) {
-    console.log(id);
     if (victoire) {
       if(this.gagnants.indexOf(id)!=-1){
         _.remove(this.gagnants, id)
@@ -74,6 +75,7 @@ export class ChouetteSiroteeComponent implements OnInit {
         _.remove(this.gagnants, id)
       }
     }
+
   }
   ngOnInit() {
     this.listeJoueurs = _.without(this.joueursService.joueurs, (this.joueursService.joueurs[parseInt(this.route.snapshot.paramMap.get('id')) - 1]));

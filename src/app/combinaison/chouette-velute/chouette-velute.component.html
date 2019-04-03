@@ -4,14 +4,11 @@
         <mat-button-toggle *ngFor="let number of choix" (click)="stockNumber(number)" 
         value="{{number}}">{{number}}</mat-button-toggle>
       </mat-button-toggle-group>
-    <mat-selection-list #joueur [formControl]="joueurSelectCtrl">
+    <mat-selection-list [formControl]="joueurSelectCtrl">
       <mat-list-option *ngFor="let joueur of this.joueursService.joueurs" value="{{joueur.id}}">
         {{joueur.nom}}
       </mat-list-option>
     </mat-selection-list>
-    <p>
-      Options selected: {{joueur.selectedOptions.selected.length}}
-    </p>
 
     <button mat-raised-button type="submit" [disabled]="joueurForm.invalid">OK !</button>
   </form>
