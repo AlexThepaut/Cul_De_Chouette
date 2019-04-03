@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { GameComponent } from './game/game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatExpansionModule, MatButtonModule, MatListModule, MatSelectModule, MatSliderModule, MatButtonToggleModule, MatTabsModule, MatRadioModule } from '@angular/material';
+import { MatExpansionModule, MatButtonModule, MatListModule, MatSelectModule, MatSliderModule, MatButtonToggleModule, MatTabsModule, MatRadioModule, MatCardModule, MatInputModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, FormBuilder, ReactiveFormsModule } from "@angular/forms";
 import { GameTreeComponent } from './game-tree/game-tree.component';
@@ -59,7 +59,7 @@ import { ChouetteSiroteeComponent } from './combinaison/chouette-sirotee/chouett
     MatSliderModule,
     MatButtonToggleModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
     MatTabsModule,
     MatRadioModule,
   ],
