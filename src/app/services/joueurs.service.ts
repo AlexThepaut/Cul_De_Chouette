@@ -29,10 +29,10 @@ export class JoueursService {
   }
 
   updateCivet(idJoueur: number, value: boolean){
-    if(this.joueurs[idJoueur-1].civet > 0){
-      if(value){
+   if(value){
         this.joueurs[idJoueur-1].civet ++;
-      }else if(!value){
+      }else if(this.joueurs[idJoueur-1].civet > 0){
+       if(!value){
         this.joueurs[idJoueur-1].civet --;
       }
     }

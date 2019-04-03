@@ -1,11 +1,11 @@
 <form (ngSubmit)="addPointsChouetteSirote()" [formGroup]="joueurForm">
   <div class="chouette-sirote">
-    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [formControl]="combiSelectCtrl">
       <mat-button-toggle *ngFor="let number of choix" (click)="stockNumber(number)" value="{{number}}">{{number}}
       </mat-button-toggle>
     </mat-button-toggle-group>
 
-    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [formControl]="victoireSelectCtrl">
       <mat-button-toggle (click)="gagne(true)">Gagné
       </mat-button-toggle>
       <mat-button-toggle (click)="gagne(false)">Perdu
