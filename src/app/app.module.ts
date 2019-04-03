@@ -26,6 +26,7 @@ import { AchatDeDesComponent } from './autres/achat-de-des/achat-de-des.componen
 import { ChouetteSiroteeComponent } from './combinaison/chouette-sirotee/chouette-sirotee.component';
 import { CookieService } from 'ngx-cookie-service';
 import { NavbarComponent } from './navbar/navbar.component';
+import { VictoireComponent } from './victoire/victoire.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     SouffletteComponent,
     BevueComponent,
     BouclietteComponent,
+    VictoireComponent
     AchatDeDesComponent,
     NavbarComponent
   ],

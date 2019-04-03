@@ -24,11 +24,11 @@ export class GameTreeComponent implements OnInit {
   }
 
   isCivetDisabled(){
-    // if(this.joueService.joueurs[parseInt(this.route.snapshot.paramMap.get('id'))-1].civet > 0){
-    //   return false;
-    // }else{
-    //   return true;
-    // }
+     if(this.joueService.joueurs[parseInt(this.route.snapshot.paramMap.get('id'))-1].civet > 0){
+       return false;
+     }else{
+       return true;
+     }
   }
 
   isBouclietteDisabled(){

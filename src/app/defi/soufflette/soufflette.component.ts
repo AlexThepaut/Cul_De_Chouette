@@ -29,20 +29,20 @@ export class SouffletteComponent implements OnInit {
   ajoutDesPoints() {
     switch (this.optionSelect) {
       case '0':
-        this.joueurService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')), 30);
+        this.joueurService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')), 30,true);
         this.joueurService.updatePointsJoueur(parseInt(this.joueurSelect), -30);
         break;
       case '1':
         this.joueurService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')), -30);
-        this.joueurService.updatePointsJoueur(parseInt(this.joueurSelect), 50);
+        this.joueurService.updatePointsJoueur(parseInt(this.joueurSelect), 50,true);
         break;
       case '2':
         this.joueurService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')), -30);
-        this.joueurService.updatePointsJoueur(parseInt(this.joueurSelect), 40);
+        this.joueurService.updatePointsJoueur(parseInt(this.joueurSelect), 40,true);
         break;
       case '3':
         this.joueurService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')), -30);
-        this.joueurService.updatePointsJoueur(parseInt(this.joueurSelect), 30);
+        this.joueurService.updatePointsJoueur(parseInt(this.joueurSelect), 30,true);
         break;
     }
     this.router.navigate([PATH_GAME]);

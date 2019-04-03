@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { JoueursService } from 'src/app/services/joueurs.service';
 import { PATH_GAME } from 'src/app/app.routes.constantes';
 import _  from 'lodash';
+import { Joueur } from 'src/app/models/joueur';
 
 @Component({
   selector: 'app-chouette-sirotee',
@@ -31,7 +32,7 @@ export class ChouetteSiroteeComponent implements OnInit {
   }
   addPointsChouetteSirote() {
     let scoreChouette = -(parseInt(this.combinaison.toString()) * parseInt(this.combinaison.toString()));
-    let scoreCulDeChouette = (10*parseInt(this.combinaison.toString()))+10;
+    let scoreCulDeChouette = (10*parseInt(this.combinaison.toString()))+40;
     for(let i =0; i < this.gagnants.length; i++) {
       if(this.gagnants[i]==parseInt(this.route.snapshot.paramMap.get('id'))){
         this.joueursService.updatePointsJoueur(this.gagnants[i],scoreCulDeChouette)
