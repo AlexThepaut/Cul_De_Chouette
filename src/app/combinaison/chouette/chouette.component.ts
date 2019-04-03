@@ -17,8 +17,13 @@ export class ChouetteComponent implements OnInit {
   }
   addPointsChouette() {
     let multiplication = parseInt(this.combinaison.toString()) * parseInt(this.combinaison.toString())
-    this.joueursService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')), multiplication)
-    this.router.navigate([PATH_GAME]);
+    this.joueursService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')), multiplication);
+    let player = this.joueursService.joueurs[parseInt(this.route.snapshot.paramMap.get('id'))-1]
+    if(player.points>343){
+      this.router.navigate([player.id]);
+    }else{
+      this.router.navigate([PATH_GAME]);
+    }
   }
   stockNumber(number) {
     this.combinaison = number;

@@ -65,7 +65,7 @@ export class GrelottineComponent implements OnInit {
   }
 
   defieurGagnant(){
-    this.joueurService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')), this.valeurGrelottine);
+    this.joueurService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')), this.valeurGrelottine,true);
     this.joueurService.updateGrelottine(parseInt(this.route.snapshot.paramMap.get('id')), false);
 
     this.joueurService.updatePointsJoueur(this.joueurSelect, -this.valeurGrelottine);
@@ -78,7 +78,7 @@ export class GrelottineComponent implements OnInit {
     this.joueurService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')), -this.valeurGrelottine);
     this.joueurService.updateGrelottine(parseInt(this.route.snapshot.paramMap.get('id')), false);
 
-    this.joueurService.updatePointsJoueur(this.joueurSelect, this.valeurGrelottine);
+    this.joueurService.updatePointsJoueur(this.joueurSelect, this.valeurGrelottine,true);
     this.joueurService.updateGrelottine(this.joueurSelect, false);
 
     this.router.navigate([PATH_GAME]);

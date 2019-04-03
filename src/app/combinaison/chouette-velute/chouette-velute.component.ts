@@ -33,7 +33,6 @@ export class ChouetteVeluteComponent implements OnInit {
 
     }else if(longeur==1){
       this.joueursService.updatePointsJoueur(Number(this.joueurForm.value.joueurSelect[0]), 2 * multiplication)
-
     }else{
       for (let i = 0; i < longeur; i++) {
         this.joueursService.updatePointsJoueur(Number(this.joueurForm.value.joueurSelect[i]),-(2 * multiplication) )   
