@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
   nameTemp: string;
   isDone: boolean;
+  name = "";
 
   constructor(private joueurService: JoueursService, private router: Router) { }
 
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit {
   addJoueur(){
     this.joueurService.createJoueur(this.nameTemp);
     this.nameTemp = '';
+    this.name = "";
   }
 
   toGamePage(){

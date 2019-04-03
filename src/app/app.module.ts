@@ -58,6 +58,8 @@ import { ChouetteSiroteeComponent } from './combinaison/chouette-sirotee/chouett
     MatSelectModule,
     MatSliderModule,
     MatButtonToggleModule,
+    MatCardModule,
+    MatInputModule
     MatTabsModule,
     MatRadioModule,
   ],
