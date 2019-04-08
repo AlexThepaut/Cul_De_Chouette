@@ -1,5 +1,5 @@
 <form (ngSubmit)="addPointsCulDeChouette()" #joueurForm="ngForm" class="game-tree__space_two-object">
-    <div class="culDeChouette">
+    <div class="culDeChouette game-tree__space_two-object--element">
       <mat-button-toggle-group name="fontStyle" aria-label="Font Style" ngModel required>
         <mat-button-toggle *ngFor="let number of choix" (click)="stockNumber(number)" value="{{number}}">{{number}}
         </mat-button-toggle>
