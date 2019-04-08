@@ -15,61 +15,72 @@ export class JoueursService {
 
   joueurs: Joueur[] = [];
 
-  constructor(private cookieService: CookieService,private router: Router) { }
+  constructor(private cookieService: CookieService, private router: Router) { }
 
-  createJoueur(newNomJoueur: string): void{
-    this.joueurs = [...this.joueurs, new Joueur((this.joueurs.length+1), newNomJoueur, 0, true, false, 0)];
+  createJoueur(newNomJoueur: string): void {
+    this.joueurs = [...this.joueurs, new Joueur((this.joueurs.length + 1), newNomJoueur, 0, true, false, 0)];
     this.saveInCookie();
   }
 
-  updatePointsJoueur(idJoueur: number, nbrPoints: number,defi:boolean = false): void{
-    let joueur = this.joueurs[idJoueur-1]
-    if((joueur.points + nbrPoints) > 0){
-      if(defi && ((joueur.points + nbrPoints)>332)){
-        if(joueur.points<=332){
+  updatePointsJoueur(idJoueur: number, nbrPoints: number, defi: boolean = false): void {
+    let joueur = this.joueurs[idJoueur - 1]
+    if ((joueur.points + nbrPoints) > 0) {
+      if (defi && ((joueur.points + nbrPoints) > 332)) {
+        if (joueur.points <= 332) {
           joueur.points = 332;
         }
-      }else{
+      } else {
         joueur.points += nbrPoints;
       }
-    }else{
+    } else {
       joueur.points = 0;
     }
-    this.joueurs[idJoueur-1] = joueur;
-      this.saveInCookie();
+    this.joueurs[idJoueur - 1] = joueur;
+    this.saveInCookie();
+    this.finDePartie(idJoueur);
   }
 
-  updateGrelottine(idJoueur: number, grelotinne: boolean){
-    this.joueurs[idJoueur-1].grelottine = grelotinne;
+  updateGrelottine(idJoueur: number, grelotinne: boolean) {
+    this.joueurs[idJoueur - 1].grelottine = grelotinne;
     this.saveInCookie();
   }
 
-  updateCivet(idJoueur: number, value: boolean){
-   if(value){
-        this.joueurs[idJoueur-1].civet ++;
-      }else if(this.joueurs[idJoueur-1].civet > 0){
-       if(!value){
-        this.joueurs[idJoueur-1].civet --;
+  updateCivet(idJoueur: number, value: boolean) {
+    if (value) {
+      this.joueurs[idJoueur - 1].civet++;
+    } else if (this.joueurs[idJoueur - 1].civet > 0) {
+      if (!value) {
+        this.joueurs[idJoueur - 1].civet--;
       }
     }
     this.saveInCookie();
   }
 
-  setBoucliette(idJoueur: number){
-    this.joueurs[idJoueur-1].boucliette = false;
+  setBoucliette(idJoueur: number) {
+    this.joueurs[idJoueur - 1].boucliette = false;
     this.saveInCookie();
   }
 
-  saveInCookie(){
-    if(this.cookieService.check(NOM_COOKIE)){
+  saveInCookie() {
+    if (this.cookieService.check(NOM_COOKIE)) {
       this.cookieService.delete(NOM_COOKIE);
     }
     this.cookieService.set(NOM_COOKIE, JSON.stringify(this.joueurs));
   }
-  finDePartie(joueur:Joueur){
-    this.router.navigate([joueur.id]);
+
+  finDePartie(idJoueur: number) {
+    if(this.joueurs[idJoueur-1].points >= 343){
+      console.log("Gange", idJoueur)
+      console.log(this.router.navigateByUrl(idJoueur.toString()));
+      this.router.navigate([idJoueur]).then(
+        (resp) => {
+          console.log(resp)
+        }
+      );
+    }
   }
-  delete(){
+
+  delete() {
     this.cookieService.delete(NOM_COOKIE);
   }
 }

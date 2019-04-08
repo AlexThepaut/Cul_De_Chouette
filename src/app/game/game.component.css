@@ -1,4 +1,4 @@
-@media(min-width: 600.1px){
+@media(min-width: 600.1px) {
     .container-game {
         max-width: 800px;
         min-height: 100vh;
@@ -8,7 +8,7 @@
     }
 }
 
-@media(max-width: 600px){
+@media(max-width: 600px) {
     .container-game {
         max-width: 800px;
         min-height: 100vh;
@@ -17,13 +17,13 @@
     }
 }
 
+.table__joueur {
+    min-width: 100%;
+}
+
 .joueur__nom {
     text-align: left;
     font-size: 18px;
-}
-
-.table__joueur {
-    width: 100%;
 }
 
 .texte-center {
