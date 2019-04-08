@@ -1,6 +1,6 @@
 <mat-accordion>
   <!-- Branche combinaisons -->
-  <mat-expansion-panel>
+  <mat-expansion-panel class="woodColor">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Combinaisons
@@ -9,7 +9,7 @@
     <!-- Sous branche des combinaisons -->
     <mat-accordion>
       <!-- Sous sous branche chouette -->
-      <mat-expansion-panel>
+      <mat-expansion-panel class="woodColor">
         <mat-expansion-panel-header>
           <mat-panel-title>
             Chouette
@@ -28,7 +28,7 @@
         </mat-tab-group>
       </mat-expansion-panel>
       <!-- Sous sous branche velute -->
-      <mat-expansion-panel>
+      <mat-expansion-panel class="woodColor">
         <mat-expansion-panel-header>
           <mat-panel-title>
             Velute
@@ -40,7 +40,7 @@
         <app-velute></app-velute>
       </mat-expansion-panel>
       <!-- Sous sous branche chouette velute -->
-      <mat-expansion-panel>
+      <mat-expansion-panel class="woodColor">
         <mat-expansion-panel-header>
           <mat-panel-title>
             Chouette Velute
@@ -52,7 +52,7 @@
         <app-chouette-velute></app-chouette-velute>
       </mat-expansion-panel>
       <!-- Sous sous branche cul de chouette -->
-      <mat-expansion-panel>
+      <mat-expansion-panel class="woodColor">
         <mat-expansion-panel-header>
           <mat-panel-title>
             Cul de Chouette
@@ -64,7 +64,7 @@
         <app-cul-de-chouette></app-cul-de-chouette>
       </mat-expansion-panel>
       <!-- Sous sous branche suite -->
-      <mat-expansion-panel>
+      <mat-expansion-panel class="woodColor">
         <mat-expansion-panel-header>
           <mat-panel-title>
             Suite
@@ -76,7 +76,7 @@
         <app-suite></app-suite>
       </mat-expansion-panel>
       <!-- Sous sous branche néant -->
-      <mat-expansion-panel>
+      <mat-expansion-panel class="woodColor">
         <mat-expansion-panel-header>
           <mat-panel-title>
             Néant
@@ -89,14 +89,14 @@
       </mat-expansion-panel>
     </mat-accordion>
   </mat-expansion-panel>
-  <mat-expansion-panel>
+  <mat-expansion-panel class="woodColor">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Défis
       </mat-panel-title>
     </mat-expansion-panel-header>
     <!-- Sous sous branche soufflette -->
-    <mat-expansion-panel>
+    <mat-expansion-panel class="woodColor">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Soufflette
@@ -108,7 +108,7 @@
       <app-soufflette></app-soufflette>
     </mat-expansion-panel>
     <!-- Sous sous branche grelotine -->
-    <mat-expansion-panel [disabled]="isGrelottineDisabled()">
+    <mat-expansion-panel [disabled]="isGrelottineDisabled()" class="woodColor">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Grelottine
@@ -120,7 +120,7 @@
       <app-grelottine></app-grelottine>
     </mat-expansion-panel>
     <!-- Sous sous branche civet -->
-    <mat-expansion-panel [disabled]="isCivetDisabled()">
+    <mat-expansion-panel [disabled]="isCivetDisabled()" class="woodColor">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Civet
@@ -132,14 +132,14 @@
       <app-civet></app-civet>
     </mat-expansion-panel>
   </mat-expansion-panel>
-  <mat-expansion-panel>
+  <mat-expansion-panel class="woodColor">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Autres
       </mat-panel-title>
     </mat-expansion-panel-header>
     <!-- Sous sous branche bévue -->
-    <mat-expansion-panel>
+    <mat-expansion-panel class="woodColor">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Bévue
@@ -151,7 +151,7 @@
       <app-bevue></app-bevue>
     </mat-expansion-panel>
     <!-- Sous sous branche boucliette -->
-    <mat-expansion-panel [disabled]="isBouclietteDisabled()">
+    <mat-expansion-panel [disabled]="isBouclietteDisabled()" class="woodColor">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Boucliette
@@ -163,7 +163,7 @@
       <app-boucliette></app-boucliette>
     </mat-expansion-panel>
     <!-- Sous sous branche achat de dés -->
-    <mat-expansion-panel>
+    <mat-expansion-panel class="woodColor">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Achat de dés

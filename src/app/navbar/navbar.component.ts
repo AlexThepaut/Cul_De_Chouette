@@ -23,6 +23,6 @@ export class NavbarComponent implements OnInit {
   }
 
   hadToBeHidden(){
-    return (this.router.url === `/${PATH_GAME}`) ? true : false;
+    return (this.router.url !== `/`) ? true : false;
   }
 }

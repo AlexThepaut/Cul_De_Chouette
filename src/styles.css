@@ -9,7 +9,7 @@
 
 body {
     font-family: "Kaamelott";
-    background-image: radial-gradient(circle, #514933, #574d35, #5d5137, #63553a, #69593c);
+    background-image: radial-gradient(circle, #deb887, #dfb176, #e0aa64, #e1a252, #e19b40);
     margin: 0;
 }
 
@@ -27,4 +27,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.woodColor{
+    background-color: #D2B48C !important;
 }

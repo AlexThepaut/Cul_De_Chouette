@@ -30,4 +30,11 @@ export class GameComponent implements OnInit {
       this.router.navigate([PATH_GAME]);
     });
   }
+
+  isDisabled(id: number){
+    if(this.router.url !== `/${PATH_GAME}`){
+      return (this.router.url !== `/${PATH_GAME}/${id}`) ? true : false;
+    }
+    return false;
+  }
 }
