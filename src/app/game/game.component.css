@@ -1,32 +1,40 @@
-
-    .container-game{
+@media(min-width: 600.1px){
+    .container-game {
         max-width: 800px;
         min-height: 100vh;
         margin: 0 auto;
-        background-color: rgba(247, 236, 222, 0.418);
-        padding: 100px 20px 0 20px;
+        padding: 20px;
         position: relative;
     }
+}
 
+@media(max-width: 600px){
+    .container-game {
+        max-width: 800px;
+        min-height: 100vh;
+        padding: 20px;
+        position: relative;
+    }
+}
 
-.joueur__nom{
+.joueur__nom {
     text-align: left;
     font-size: 18px;
 }
 
-.table__joueur{
+.table__joueur {
     width: 100%;
 }
 
-.texte-center{
+.texte-center {
     text-align: center;
 }
 
-.combinaison{
+.combinaison {
     margin: 20px 0;
 }
 
-.button-nom{
+.button-nom {
     width: 100%;
     font-size: 20px;
 }
