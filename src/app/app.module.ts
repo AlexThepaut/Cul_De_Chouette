@@ -27,6 +27,8 @@ import { ChouetteSiroteeComponent } from './combinaison/chouette-sirotee/chouett
 import { CookieService } from 'ngx-cookie-service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { VictoireComponent } from './victoire/victoire.component';
+import { MenuComponent } from './menu/menu.component';
+import { RulesComponent } from './rules/rules.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { VictoireComponent } from './victoire/victoire.component';
     BouclietteComponent,
     VictoireComponent,
     AchatDeDesComponent,
-    NavbarComponent
+    NavbarComponent,
+    MenuComponent,
+    RulesComponent
   ],
   imports: [
     BrowserModule,

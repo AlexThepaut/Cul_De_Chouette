@@ -10,12 +10,13 @@ import { PATH_GAME, PATH_HOME } from '../app.routes.constantes';
 })
 export class NavbarComponent implements OnInit {
 
-  isHidden: boolean;
+  isArrowHidden: boolean;
+  isMenuHidden: boolean;
 
   constructor(private location: Location, private router: Router) { }
 
   ngOnInit() {
-    this.isHidden = this.hadToBeHidden();
+    this.isArrowHidden = this.hadToBeHidden();
   }
 
   toPrevious(){
@@ -28,5 +29,9 @@ export class NavbarComponent implements OnInit {
 
   hadToBeHidden(){
     return (this.router.url !== `/`) ? true : false;
+  }
+
+  toggleMenu(){
+    this.isMenuHidden = !this.isMenuHidden;
   }
 }

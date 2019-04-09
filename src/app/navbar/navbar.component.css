@@ -25,6 +25,7 @@
     position: absolute;
     align-self: center;
     right: 18px;
+    z-index: 1;
 }
 
 .navbar__left{
@@ -32,3 +33,4 @@
     align-self: center;
     left: 18px;
 }
+
