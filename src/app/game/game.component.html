@@ -1,5 +1,5 @@
+<app-navbar></app-navbar>
 <div class="container-game">
-  <app-navbar></app-navbar>
   <table class="font-kaamelott texte-center table__joueur">
     <tr>
       <th></th>
@@ -10,7 +10,7 @@
     </tr>
     <tr *ngFor="let joueur of joueurService.joueurs">
       <th class="joueur__nom">
-        <button mat-button (click)="joueurChoose(joueur.id)" class="font-kaamelott button-nom">{{joueur.nom}}</button>
+        <button mat-button (click)="joueurChoose(joueur.id)" class="font-kaamelott button-nom" [disabled]="isDisabled(joueur.id)">{{joueur.nom}}</button>
       </th>
       <td>
         {{joueur.points}}

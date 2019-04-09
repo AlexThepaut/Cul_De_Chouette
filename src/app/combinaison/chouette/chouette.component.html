@@ -1,9 +1,9 @@
 <form (ngSubmit)="addPointsChouette()" #joueurForm="ngForm" class="game-tree__space_two-object">
-    <div class="chouette">
-      <mat-button-toggle-group name="fontStyle" aria-label="Font Style" ngModel required>
-        <mat-button-toggle *ngFor="let number of choix" (click)="stockNumber(number)" value="{{number}}">{{number}}
-        </mat-button-toggle>
-      </mat-button-toggle-group>
-    </div>
-    <button mat-raised-button type="submit" [disabled]="joueurForm.invalid">OK !</button>
-  </form>
+  <div class="chouette game-tree__space_two-object--element">
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" ngModel required>
+      <mat-button-toggle *ngFor="let number of choix" (click)="stockNumber(number)" value="{{number}}">{{number}}
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <button mat-raised-button type="submit" [disabled]="joueurForm.invalid">OK !</button>
+</form>

@@ -1,9 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
 /* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
 
-body { 
-    font-family: Roboto, "Helvetica Neue", sans-serif; 
-    background-image: radial-gradient(circle, #514933, #574d35, #5d5137, #63553a, #69593c);
+* {
+    font-family: "Kaamelott";
+    /* Add !important to overwrite all elements */
+}
+
+body {
+    font-family: "Kaamelott";
+    background-image: radial-gradient(circle, #deb887, #dfb176, #e0aa64, #e1a252, #e19b40);
     margin: 0;
 }
 
@@ -12,13 +18,22 @@ body {
     src: url("assets/folkard_.ttf");
 }
 
-.font-kaamelott{
+.font-kaamelott {
     font-family: "Kaamelott";
 }
 
-.game-tree__space_two-object{
+.game-tree__space_two-object {
     margin: 10px 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+}
+
+.game-tree__space_two-object--element{
+    margin-bottom: 10px;
+}
+
+.woodColor{
+    background-color: #D2B48C !important;
 }

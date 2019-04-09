@@ -16,5 +16,6 @@ export const ROUTES: Routes = [
         }, children: [
             { path: ':id', component: GameTreeComponent },
         ]
-    },{ path: ':id', component: VictoireComponent  }
+    },
+    { path: ':id', component: VictoireComponent  }
 ];
