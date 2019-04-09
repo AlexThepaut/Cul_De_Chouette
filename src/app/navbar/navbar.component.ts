@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-import { PATH_GAME } from '../app.routes.constantes';
+import { PATH_GAME, PATH_HOME } from '../app.routes.constantes';
 
 @Component({
   selector: 'app-navbar',
@@ -19,7 +19,11 @@ export class NavbarComponent implements OnInit {
   }
 
   toPrevious(){
-    this.location.back();
+    if(this.router.url !== `/${PATH_GAME}`){
+      this.router.navigate([PATH_GAME]);
+    }else{
+      this.router.navigate([PATH_HOME]);
+    }
   }
 
   hadToBeHidden(){
