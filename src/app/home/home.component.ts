@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   constructor(public joueurService: JoueursService, private router: Router) { }
 
   ngOnInit() {
+    this.joueurService.delete();
   }
 
   nameChange(value){

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JoueursService } from '../services/joueurs.service';
 import { Router } from '@angular/router';
-import { PATH_RULES, PATH_HOME } from '../app.routes.constantes';
+import { PATH_RULES, PATH_HOME, PATH_TUTO } from '../app.routes.constantes';
 
 @Component({
   selector: 'app-menu',
@@ -16,7 +16,7 @@ export class MenuComponent implements OnInit {
   }
 
   toTutorial() {
-    // TODO
+    this.router.navigate([PATH_TUTO]);
   }
 
   toRules() {
@@ -27,5 +27,9 @@ export class MenuComponent implements OnInit {
     this.joueursService.delete();
     this.joueursService.joueurs = [];
     this.router.navigate([PATH_HOME]);
+  }
+
+  isNewGame(){
+    return this.router.url === `/${PATH_HOME}` ? false : true;
   }
 }

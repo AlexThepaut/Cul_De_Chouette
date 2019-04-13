@@ -21,7 +21,13 @@ export class NavbarComponent implements OnInit {
 
   toPrevious(){
     if(this.router.url !== `/${PATH_GAME}`){
-      this.router.navigate([PATH_GAME]);
+      this.router.navigate([PATH_GAME]).then(
+        (resp)=>{
+          if(!resp){
+            this.router.navigate([PATH_HOME]);
+          }
+        }
+      );
     }else{
       this.router.navigate([PATH_HOME]);
     }

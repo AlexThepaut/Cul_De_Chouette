@@ -81,6 +81,7 @@ export class JoueursService {
   }
 
   delete() {
+    this.joueurs = [];
     this.cookieService.delete(NOM_COOKIE);
   }
 }
