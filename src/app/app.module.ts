@@ -29,6 +29,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { VictoireComponent } from './victoire/victoire.component';
 import { MenuComponent } from './menu/menu.component';
 import { RulesComponent } from './rules/rules.component';
+import { TutoComponent } from './tuto/tuto.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { RulesComponent } from './rules/rules.component';
     AchatDeDesComponent,
     NavbarComponent,
     MenuComponent,
-    RulesComponent
+    RulesComponent,
+    TutoComponent
   ],
   imports: [
     BrowserModule,
