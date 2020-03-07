@@ -30,7 +30,7 @@ export class ChouetteVeluteComponent implements OnInit {
     /***aidez moi svp */
     let longeur = this.joueurForm.value.joueurSelect.length
     if (longeur == 0) {
-
+      this.router.navigate([PATH_GAME]);
     } else if (longeur == 1) {
       this.joueursService.updatePointsJoueur(Number(this.joueurForm.value.joueurSelect[0]), 2 * multiplication)
     } else {
@@ -38,7 +38,6 @@ export class ChouetteVeluteComponent implements OnInit {
         this.joueursService.updatePointsJoueur(Number(this.joueurForm.value.joueurSelect[i]), -(2 * multiplication))
       }
     }
-    this.router.navigate([PATH_GAME]);
   }
   stockNumber(number) {
     this.combinaison = number;
