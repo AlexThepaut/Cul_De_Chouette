@@ -20,8 +20,6 @@ export class CulDeChouetteComponent implements OnInit {
     if (this.combinaison!=0){
       let score = parseInt(this.combinaison.toString()) * 10+40 ;
       this.joueursService.updatePointsJoueur(parseInt(this.route.snapshot.paramMap.get('id')), score)
-        this.router.navigate([PATH_GAME]);
-      
     }
   }
   stockNumber(number) {

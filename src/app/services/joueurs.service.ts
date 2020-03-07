@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import { Joueur } from '../models/joueur';
 
 import { CookieService } from 'ngx-cookie-service';
-import { PATH_HOME } from '../app.routes.constantes';
+import { PATH_HOME, PATH_GAME } from '../app.routes.constantes';
 import { Router } from '@angular/router';
-import { promise } from 'protractor';
 
 const NOM_COOKIE = 'CDC';
 
@@ -18,11 +17,11 @@ export class JoueursService {
   constructor(private cookieService: CookieService, private router: Router) { }
 
   createJoueur(newNomJoueur: string): void {
-    this.joueurs = [...this.joueurs, new Joueur((this.joueurs.length + 1), newNomJoueur, 0, true, false, 0)];
+    this.joueurs.push(new Joueur((this.joueurs.length + 1), newNomJoueur, 0, true, false, 0));
     this.saveInCookie();
   }
 
-  updatePointsJoueur(idJoueur: number, nbrPoints: number, defi: boolean = false): void {
+  updatePointsJoueur(idJoueur: number, nbrPoints: number, defi: boolean = false,sirot: boolean = false): void {
     let joueur = this.joueurs[idJoueur - 1]
     if ((joueur.points + nbrPoints) > 0) {
       if (defi && ((joueur.points + nbrPoints) > 332)) {
@@ -37,11 +36,14 @@ export class JoueursService {
     }
     this.joueurs[idJoueur - 1] = joueur;
     this.saveInCookie();
-    this.finDePartie(idJoueur);
+    if(!sirot && !defi){
+      this.finDePartieOuRetourAuJeu(idJoueur);
+    }
   }
 
   updateGrelottine(idJoueur: number, grelotinne: boolean) {
     this.joueurs[idJoueur - 1].grelottine = grelotinne;
+
     this.saveInCookie();
   }
 
@@ -68,15 +70,11 @@ export class JoueursService {
     this.cookieService.set(NOM_COOKIE, JSON.stringify(this.joueurs));
   }
 
-  finDePartie(idJoueur: number) {
+  finDePartieOuRetourAuJeu(idJoueur: number) {
     if(this.joueurs[idJoueur-1].points >= 343){
-      console.log("Gange", idJoueur)
-      console.log(this.router.navigateByUrl(idJoueur.toString()));
-      this.router.navigate([idJoueur]).then(
-        (resp) => {
-          console.log(resp)
-        }
-      );
+      this.router.navigate([idJoueur]);
+    }else{
+      this.router.navigate([PATH_GAME]);
     }
   }
 
