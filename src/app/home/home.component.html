@@ -5,10 +5,10 @@
       Joueur {{joueur.id}} : {{joueur.nom}}
     </div>
     <div>
-      <mat-form-field class="input-nom">
-        <input matInput placeholder="Nouveau joueur" name="newJoueur" (keyup)="nameChange($event)" [(ngModel)]="name">
+      <mat-form-field class="input-nom"  >
+        <input [formControl]="joueurEnteredCtrl" required matInput placeholder="Nouveau joueur" name="newJoueur" (keyup)="nameChange($event)" [(ngModel)]="name">
       </mat-form-field>
-      <button mat-raised-button type="button" (click)="addJoueur()">Ajouter</button>
+      <button mat-raised-button type="button" (click)="addJoueur()" [disabled]="joueurForm.invalid" >Ajouter</button>
     </div>
     <div *ngIf="joueurService.joueurs.length >= 2" class="button-container">
       <button mat-raised-button type="button" (click)="toGamePage()">Jouer !</button>

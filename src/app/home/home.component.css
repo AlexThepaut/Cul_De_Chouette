@@ -17,3 +17,7 @@
 .input-nom{
     margin-right: 20px;
 }
+input{
+    margin: 0;
+    height: 30px;
+}
